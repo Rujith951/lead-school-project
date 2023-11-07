@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./components/Input";
-import Display from "./components/display";
+import Display from "./components/Display";
 import { useSelector } from "react-redux";
 import Loading from "./components/Loading";
 
