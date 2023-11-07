@@ -3,7 +3,7 @@ import {
 	FETCH_POSTAL_ERROR,
 	FETCH_POSTAL_LOADING,
 	FETCH_POSTAL_SUCCESS,
-} from "./Actions";
+} from "./actions";
 
 function fetchPostalError(error) {
 	return { type: FETCH_POSTAL_ERROR, payload: error };

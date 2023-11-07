@@ -3,7 +3,7 @@ import {
 	FETCH_POSTAL_SUCCESS,
 	FETCH_POSTAL_LOADING,
 	CLEAR_DATA,
-} from "./Actions";
+} from "./actions";
 
 const initialState = {
 	loading: false,
