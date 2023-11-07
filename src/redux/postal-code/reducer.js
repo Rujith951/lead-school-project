@@ -16,9 +16,9 @@ function reducer(state = initialState, { type, payload }) {
 		case FETCH_POSTAL_LOADING:
 			return { ...state, loading: true };
 		case FETCH_POSTAL_SUCCESS:
-			return { ...state, data: payload, loading: false };
+			return { ...state, data: payload, error: "", loading: false };
 		case FETCH_POSTAL_ERROR:
-			return { ...state, error: payload, loading: false };
+			return { ...state, error: payload, data: {}, loading: false };
 		case CLEAR_DATA:
 			return { ...state, data: {} };
 		default:

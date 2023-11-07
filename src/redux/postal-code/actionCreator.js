@@ -25,10 +25,14 @@ function getPostalData(pincode) {
 	return async dispatch => {
 		dispatch(fetchPostalLoading());
 		try {
-			const response = await (
-				await fetch(`https://api.zippopotam.us/in/${pincode}`)
-			).json();
-			dispatch(fetchPostalSuccess(response));
+			const response = await fetch(`https://api.zippopotam.us/in/${pincode}`);
+			if (response.status === 404) {
+				throw new Error(
+					`Pincode : ${pincode} is not valid. Please enter a valid pincode ex:110001,522001,522002`
+				);
+			}
+			const data = await response.json();
+			dispatch(fetchPostalSuccess(data));
 		} catch (err) {
 			dispatch(fetchPostalError(err.message));
 		}
